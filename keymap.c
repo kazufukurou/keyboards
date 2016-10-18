@@ -25,38 +25,38 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /*
  * .-----------------------------------------------------------------------.
- * |     |  ~  |  %  |  {  |  }  |  ^  |  =  |  7  |  8  |  9  |  !  |  `  |
+ * |     |  ~  |  %  |  {  |  }  |  ^  |  =  |  7  |  8  |  9  |  !  |Bksp |
  * |-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----|
  * |     |  $  |  &  |  (  |  )  |  @  |  *  |  4  |  5  |  6  |  ?  |  |  |
  * |-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----|
- * |     |     |     |  [  |  ]  |  #  |  +  |  1  |  2  |  3  |  /  |  \  |
+ * |     |     |  `  |  [  |  ]  |  #  |  +  |  1  |  2  |  3  |  /  |  \  |
  * |-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----|
  * |     |     |     |     |     |           |  0  |     |     |     |     |
  * '-----------------------------------------------------------------------'
  */
 [1] = {
-  {KC_NO,   KC_TILD, KC_PERC, KC_LCBR, KC_RCBR, KC_CIRC, KC_EQL,  KC_7,    KC_8,    KC_9,    KC_EXLM, KC_GRV},
+  {KC_NO,   KC_TILD, KC_PERC, KC_LCBR, KC_RCBR, KC_CIRC, KC_EQL,  KC_7,    KC_8,    KC_9,    KC_EXLM, KC_BSPC},
   {KC_NO,   KC_DLR,  KC_AMPR, KC_LPRN, KC_RPRN, KC_AT,   KC_ASTR, KC_4,    KC_5,    KC_6,    KC_QUES, KC_PIPE},
-  {KC_NO,   KC_AT,   KC_NO,   KC_LBRC, KC_RBRC, KC_HASH, KC_PLUS, KC_1,    KC_2,    KC_3,    KC_SLSH, KC_BSLS},
+  {KC_NO,   KC_AT,   KC_GRV,  KC_LBRC, KC_RBRC, KC_HASH, KC_PLUS, KC_1,    KC_2,    KC_3,    KC_SLSH, KC_BSLS},
   {KC_NO,   KC_NO,   KC_NO,   KC_TRNS, KC_NO,   KC_NO,   KC_NO,   KC_0,    KC_TRNS, KC_NO,   KC_NO,   KC_NO}
 },
 
 /*
  * .-----------------------------------------------------------------------.
- * |     | F9  | F10 | F11 | F12 |     |     |     | Up  |     |     |Reset|
+ * |     | F9  | F10 | F11 | F12 |     |     | MB1 | Up  | MB2 | MB3 |     |
  * |-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----|
  * |     | F5  | F6  | F7  | F8  |     |     |Left |Down |Right|     |     |
  * |-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----|
  * |     | F1  | F2  | F3  | F4  |     |     |Prev |Play |Next |     |     |
  * |-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----|
- * |     |     |     |     |     |           |Vol- |Mute |Vol+ |     |     |
+ * |     |     |     |     |     |           |Vol- |Mute |Vol+ |     |Reset|
  * '-----------------------------------------------------------------------'
  */
 [2] = {
-  {KC_NO,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_NO,   KC_NO,   KC_NO,   KC_UP,   KC_NO,   KC_NO,   RESET},
+  {KC_NO,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_NO,   KC_NO,   KC_BTN1, KC_UP,   KC_BTN2, KC_BTN3, KC_NO},
   {KC_NO,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_NO,   KC_NO,   KC_LEFT, KC_DOWN, KC_RGHT, KC_NO,   KC_NO},
   {KC_NO,   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_NO,   KC_NO,   KC_MPRV, KC_MPLY, KC_MNXT, KC_NO,   KC_NO},
-  {KC_TRNS, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_VOLD, KC_MUTE, KC_VOLU, KC_NO,   KC_NO}
+  {KC_TRNS, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_VOLD, KC_MUTE, KC_VOLU, KC_NO,   RESET}
 },
 
 };
