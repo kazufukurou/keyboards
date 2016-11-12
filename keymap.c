@@ -1,6 +1,4 @@
 #include "planck.h"
-#include "keymap_extras/keymap_dvp.h"
-
 
 #define SFT_ENT SFT_T(KC_ENT)
 #define CTL_ESC CTL_T(KC_ESC)
@@ -19,9 +17,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * '-----------------------------------------------------------------------------'
  */
 [0] = {
-  {KC_TAB,  DP_SCLN, DP_COMM, DP_DOT,  DP_P,    DP_Y,    DP_F,    DP_G,    DP_C,    DP_R,    DP_L,    KC_BSPC},
-  {CTL_ESC, DP_A,    DP_O,    DP_E,    DP_U,    DP_I,    DP_D,    DP_H,    DP_T,    DP_N,    DP_S,    DP_MINS},
-  {KC_LSFT, DP_QUOT, DP_Q,    DP_J,    DP_K,    DP_X,    DP_B,    DP_M,    DP_W,    DP_V,    DP_Z,    KC_UP},
+  {KC_TAB,  KC_SCLN, KC_COMM, KC_DOT,  KC_P,    KC_Y,    KC_F,    KC_G,    KC_C,    KC_R,    KC_L,    KC_BSPC},
+  {CTL_ESC, KC_A,    KC_O,    KC_E,    KC_U,    KC_I,    KC_D,    KC_H,    KC_T,    KC_N,    KC_S,    KC_MINS},
+  {KC_LSFT, KC_QUOT, KC_Q,    KC_J,    KC_K,    KC_X,    KC_B,    KC_M,    KC_W,    KC_V,    KC_Z,    KC_UP},
   {F(2),    KC_LGUI, KC_LALT, F(1),    SFT_ENT, KC_SPC,  KC_SPC,  SFT_ENT, F(1),    KC_LEFT, KC_RGHT, KC_DOWN}
 },
 
@@ -37,10 +35,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * '-----------------------------------------------------------------------'
  */
 [1] = {
-  {KC_NO,   DP_TILD, DP_PERC, DP_LCBR, DP_RCBR, DP_CIRC, DP_EQL,  DP_7,    DP_8,    DP_9,    DP_EXLM, KC_BSPC},
-  {KC_NO,   DP_DLR,  DP_AMPR, DP_LPRN, DP_RPRN, DP_AT,   DP_ASTR, DP_4,    DP_5,    DP_6,    DP_QUES, DP_PIPE},
-  {KC_NO,   KC_NO,   DP_GRV,  DP_LBRC, DP_RBRC, DP_HASH, DP_PLUS, DP_1,    DP_2,    DP_3,    DP_SLSH, DP_BSLS},
-  {KC_NO,   KC_NO,   KC_NO,   KC_TRNS, KC_NO,   KC_NO,   KC_NO,   DP_0,    KC_TRNS, KC_NO,   KC_NO,   KC_NO}
+  {KC_NO,   KC_TILD, KC_PERC, KC_LCBR, KC_RCBR, KC_CIRC, KC_EQL,  KC_7,    KC_8,    KC_9,    KC_EXLM, KC_BSPC},
+  {KC_NO,   KC_DLR,  KC_AMPR, KC_LPRN, KC_RPRN, KC_AT,   KC_ASTR, KC_4,    KC_5,    KC_6,    KC_QUES, KC_PIPE},
+  {KC_NO,   KC_NO,   KC_GRV,  KC_LBRC, KC_RBRC, KC_HASH, KC_PLUS, KC_1,    KC_2,    KC_3,    KC_SLSH, KC_BSLS},
+  {KC_NO,   KC_NO,   KC_NO,   KC_TRNS, KC_NO,   KC_NO,   KC_NO,   KC_0,    KC_TRNS, KC_NO,   KC_NO,   KC_NO}
 },
 
 /*
