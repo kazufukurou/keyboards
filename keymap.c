@@ -2,6 +2,7 @@
 
 #define SFT_ENT SFT_T(KC_ENT)
 #define CTL_ESC CTL_T(KC_ESC)
+#define PREVENT_STUCK_MODIFIERS
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -43,7 +44,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /*
  * .-----------------------------------------------------------------------.
- * |     | F9  | F10 | F11 | F12 |     |     | MB1 | Up  | MB2 |     | Del |
+ * |     | F9  | F10 | F11 | F12 |     |     | MB1 | Up  | MB2 | Ins | Del |
  * |-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----|
  * |     | F5  | F6  | F7  | F8  |     |     |Left |Down |Right|     |     |
  * |-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----|
