@@ -7,6 +7,7 @@
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /*
+ * Base
  * .-----------------------------------------------------------------------------.
  * |  Tab  | ;:  | ,<  | .>  |   P   |  Y  |  F  |   G   |  C  |  R  |  L  |Bksp |
  * |-------+-----+-----+-----+-------+-----+-----+-------+-----+-----+-----+-----|
@@ -25,6 +26,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 },
 
 /*
+ * Fn1
  * .-----------------------------------------------------------------------.
  * |     |  ~  |  %  |  {  |  }  |  ^  |  =  |  7  |  8  |  9  |  !  |Bksp |
  * |-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----|
@@ -43,21 +45,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 },
 
 /*
+ * Fn2
  * .-----------------------------------------------------------------------.
- * |     | F9  | F10 | F11 | F12 |     |     | MB1 | Up  | MB2 | Ins | Del |
+ * |     | F9  | F10 | F11 | F12 |     |     | MB1 | MB2 | MB3 | Ins | Del |
  * |-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----|
- * |     | F5  | F6  | F7  | F8  |     |     |Left |Down |Right|     |     |
+ * |     | F5  | F6  | F7  | F8  |     |     |Vol- |Mute |Vol+ |PgUp |Home |
  * |-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----|
- * |     | F1  | F2  | F3  | F4  |     |     |Prev |Play |Next |     |     |
+ * |     | F1  | F2  | F3  | F4  |     |     |Prev |Play |Next |PgDn | End |
  * |-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----|
- * |     |     |     |     |     |           |Vol- |Mute |Vol+ |     |Reset|
+ * |     |     |     |     |     |           |     |     |     |     |Reset|
  * '-----------------------------------------------------------------------'
  */
 [2] = {
-  {KC_NO,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_NO,   KC_NO,   KC_BTN1, KC_UP,   KC_BTN2, KC_INS,  KC_DEL},
-  {KC_NO,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_NO,   KC_NO,   KC_LEFT, KC_DOWN, KC_RGHT, KC_NO,   KC_NO},
-  {KC_NO,   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_NO,   KC_NO,   KC_MPRV, KC_MPLY, KC_MNXT, KC_NO,   KC_NO},
-  {KC_TRNS, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_VOLD, KC_MUTE, KC_VOLU, KC_NO,   RESET}
+  {KC_NO,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_NO,   KC_NO,   KC_BTN1, KC_BTN2, KC_BTN3, KC_INS,  KC_DEL},
+  {KC_TRNS, KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_NO,   KC_NO,   KC_VOLD, KC_MUTE, KC_VOLU, KC_PGUP, KC_HOME},
+  {KC_TRNS, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_NO,   KC_NO,   KC_MPRV, KC_MPLY, KC_MNXT, KC_PGDN, KC_END},
+  {KC_TRNS, KC_TRNS, KC_TRNS, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   RESET}
 },
 
 };
