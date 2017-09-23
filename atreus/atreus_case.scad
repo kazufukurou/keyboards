@@ -2,8 +2,9 @@
 /* All distances are in mm. */
 
 $fn = 50;
+simple = false;
 angle = 10;
-thumb_angle = 20;
+thumb_angle = simple ? 0 : 20;
 hole_radius = 1.5;
 washer_radius = 4 * hole_radius;
 hand_distance = 8;
@@ -29,14 +30,13 @@ module keys(size, switches) mirrored() rotate_half() {
   o = spacing*0.5;
   for (c=[1:(cols-1)]) for(r=[1:(rows-1)]) key([c*spacing + o, r*spacing + row_offsets[c] + o], size);
   for (c=[(switches ? 2 :1):(cols-2)]) key([c*spacing + o, row_offsets[c] + o], size);
-  rz(thumb_angle, [2*spacing, 0]) {
-    key([spacing + o, o], size);
-    //key([o, o], size);
-    rz(thumb_angle, [spacing, 0]) {
+    rz(thumb_angle, [2*spacing, 0]) {
+      key([spacing + o, o + (simple ? row_offsets[1] : 0)], size);
+      rz(thumb_angle, [spacing, 0]) {
         key([o, o], size);
-        if (!switches) key([spacing + o, o], size);
+        if (!switches && !simple) key([spacing + o, o], size);
+      }
     }
-  }
 }
 
 module holes(radius) mirrored() {
@@ -45,7 +45,7 @@ module holes(radius) mirrored() {
   top_corner = [cols * spacing + o, rows*spacing + row_offsets[cols-1]];
   rotate_half() {
     hole(top_corner, radius);
-    hole([cols * spacing + o, spacing + row_offsets[cols-1] - o], radius);
+    hole([cols * spacing + o, spacing + row_offsets[cols-1] - (simple ? spacing : o)], radius);
     rz(thumb_angle, [2*spacing, 0]) rz(thumb_angle, [spacing, 0]) hole([o, row_offsets[0] - o], radius);
   }
   translate([(-spacing*4 - o*2) / cos(angle), 0]) rotate_half() hole(top_corner, radius);
@@ -58,14 +58,13 @@ module plate_middle() difference() {
       hull() keys(key_size, false);
     }
     holes(washer_radius);
-    //translate([0, 85]) square([60, 15], center=true);
+    translate([0, 85]) polygon([[-20, -5],[20,-5],[40,5],[-40,5]]);
   }
   holes(hole_radius);
   translate([0, 95]) square([36, 15], center=true);
-  //translate([0, 5]) square([20, 15], center=true);
 }
 
 plate_top();
-translate([300, 150]) plate_middle();
+translate([300, 130]) plate_middle();
 translate([300, 0]) plate_switch();
 translate([0, 130]) plate_bottom();
