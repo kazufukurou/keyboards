@@ -53,20 +53,25 @@ module holes(radius) mirrored() {
 }
 
 module plate_middle() difference() {
-  union() {
-    difference() {
-      plate_bottom();
-      hull() keys(key_size, false);
+  linear_extrude(height=8, center=true, convexity=10, twist=0) difference() {
+    union() {
+      difference() {
+        plate_bottom();
+        hull() keys(key_size+4, false);
+      }
+      holes(washer_radius);
+      translate([0, 85]) polygon([[-20, -5],[20,-5],[30,5],[-30,5]]);
     }
-    holes(washer_radius);
-    translate([0, 85]) polygon([[-20, -5],[20,-5],[40,5],[-40,5]]);
+    holes(hole_radius);
+    translate([0, 93]) square([38, 8], center=true);
+    translate([0, 93]) square([16, 30], center=true);
+    translate([0, -50]) square([200, 200], center=false);
   }
-  holes(hole_radius);
-  translate([0, 95]) square([36, 15], center=true);
+  translate([-14, 95]) rotate([90,0,0]) cylinder(r=1.5,h=30);
 }
 
 plate_switch();
 //plate_bottom();
 translate([0, 130]) plate_bottom();
-//translate([300, 130]) plate_middle();
+translate([300, 130]) plate_middle();
 //translate([300, 0]) plate_top();
