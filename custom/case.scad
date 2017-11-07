@@ -57,10 +57,12 @@ module plate_middle() difference() {
     union() {
       difference() {
         plate_bottom();
-        hull() keys(key_size+4, false);
+        hull() keys(key_size+3, false);
+        polygon([[0, 85],[-112,89],[-122,35],[0,0]]);
+        //hull() translate([-6,0]) keys(key_size, false);
       }
       holes(washer_radius);
-      translate([0, 85]) polygon([[-20, -5],[20,-5],[30,5],[-30,5]]);
+      translate([0, 85]) polygon([[-20, -5],[20,-5],[32,7],[-32,7]]);
     }
     holes(hole_radius);
     translate([0, 93]) square([38, 8], center=true);
@@ -70,8 +72,8 @@ module plate_middle() difference() {
   translate([-14, 95]) rotate([90,0,0]) cylinder(r=1.5,h=30);
 }
 
-plate_switch();
+//plate_switch();
 //plate_bottom();
-translate([0, 130]) plate_bottom();
+//translate([0, 130]) plate_bottom();
 translate([300, 130]) plate_middle();
 //translate([300, 0]) plate_top();
