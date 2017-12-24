@@ -30,7 +30,7 @@ module keys(size, switches) mirrored() rotate_half() {
   o = spacing*0.5;
   for (c=[1:(cols-1)]) for(r=[1:(rows-1)]) key([c*spacing + o, r*spacing + row_offsets[c] + o], size);
   //for (c=[(switches ? 2 :1):(cols-2)]) key([c*spacing + o, row_offsets[c] + o], size);
-  for (c=[(switches ? 2 :1):(cols-3)]) key([c*spacing + o, o], size); 
+  for (c=[(switches ? 2 :1):(cols-3)]) key([c*spacing + o, o], size);
   rz(thumb_angle, [2*spacing, 0]) {
     key([spacing + o, o + (simple ? row_offsets[1] : 0)], size);
     rz(thumb_angle, [spacing, 0]) {
