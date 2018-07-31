@@ -1,4 +1,4 @@
-#include "minius.h"
+#include "menelaus.h"
 
 #define ___X___ KC_NO
 #define _______ KC_TRNS
