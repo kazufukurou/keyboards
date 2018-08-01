@@ -7,9 +7,7 @@ hole_radius = 1.5;
 washer_radius = 3 * hole_radius;
 spacing = 19;
 hand_distance = spacing * 2;
-space_size = spacing + 1;
 switch_size = 13.97;
-key_size = 17;
 rows = 4;
 cols = 5;
 row_offset = 4;
@@ -47,9 +45,8 @@ module plate_middle() {
   union() {
     difference() {
       plate_bottom();
-      hull() keys(key_size+3);
+      hull() keys(spacing);
       //polygon([[0, 85],[-112,89],[-122,35],[0,0]]);
-      //hull() translate([-6,0]) keys(key_size);
     }
     holes(washer_radius);
     //translate([0, 85]) polygon([[-20, -5],[20,-5],[32,7],[-32,7]]);
