@@ -10,7 +10,7 @@ hand_distance = spacing * 2;
 switch_size = 13.97;
 rows = 4;
 cols = 5;
-row_offset = 4;
+row_offset = 3;
 
 module rz(angle, center=undef) translate(center) rotate(angle) translate(-center) children();
 module mirrored() { children(); mirror ([1, 0, 0]) { children(); } }
@@ -23,22 +23,23 @@ module plate_top() difference() { plate_bottom(); keys(switch_size); }
 
 module keys(size) mirrored() rotate_half() {
   for (c =[0 : cols - 1]) for(r=[0 : rows - 1]) {
-    offset = c == 2 && r != 0 ? 4 : c == row_offset ? -row_offset : 0;
+    offset = c == 2 && r != 0 ? row_offset : c == rows ? -row_offset : 0;
     if (!(r == 0 && (c == 3 || c == 4))) key([c * spacing, r * spacing + offset], size);
   }
 }
 
 module holes(radius) mirrored() {
   //translate([0, 10]) square([15, 30], center=true);
-  offset = spacing * 0.5 + 3;
-  top_corner = [(cols - 1) * spacing+offset, (rows - 1) * spacing + offset - row_offset];
+  offset1 = spacing * 0.5 + 3;
+  offset2 = switch_size * 0.5;
+  top_corner = [(cols - 1) * spacing + offset2, (rows - 1) * spacing + offset1 - row_offset];
   rotate_half() {
     hole(top_corner, radius);
-    hole([(cols - 1) * spacing + offset, spacing - offset - row_offset], radius);
-    hole([2 * spacing + offset, -offset], radius);
-    hole([-offset, -offset], radius);
+    hole([(cols - 1) * spacing + offset2, spacing - offset1 - row_offset], radius);
+    hole([2 * spacing + offset1, -offset2], radius);
+    hole([-offset1, -offset2], radius);
   }
-  translate([((cols - 2) * -spacing - offset) / cos(angle), 0]) rotate_half() hole(top_corner, radius);
+  translate([((cols - 2) * -spacing - offset2) / cos(angle), 0]) rotate_half() hole(top_corner, radius);
 }
 
 module plate_middle() {
@@ -57,5 +58,5 @@ module plate_middle() {
 }
 
 plate_top();
-translate([0, 130]) plate_bottom();
-translate([300, 130]) plate_middle();
+translate([0, 120]) plate_bottom();
+translate([230, 120]) plate_middle();
