@@ -42,7 +42,6 @@ module items(size, pcb_holes, mirrored) rotate_half() {
   }
 }
 
-
 module pcb_holes() {
     items(0, true, false);
     mirror([1, 0, 0]) items(0, true, true);
@@ -68,57 +67,28 @@ module plate_middle() difference() {
       hull() keys(16);
     }
     holes(washer_radius);
-    translate([0, 64]) polygon([[-10, -5],[10,-5],[20,7],[-20,7]]);
   }
   holes(hole_radius);
-  translate([0, 73]) square([9, 30], center = true);
+  //translate([0, 73]) square([9, 30], center = true);
 }
 
 module pcb() difference() {
   plate_bottom();
   pcb_holes();
   //keys(14);
-  hull() {
-      translate([-10, -8]) circle(3);
-      translate([10, -8]) circle(3);
-      translate([0, 43]) circle(4);
-  }
   translate([0, 80]) square([9, 30], center = true);
   translate([0, 65]) circle(4.5);
 }
 
-module pcb1() difference() {
-  mirrored() difference() {
-    union() {
-      hull() union() {
-        translate([23, 70]) circle(3);
-        items(16);
-      }
-      translate([0, -17]) square([17, 7]);
-      translate([0, 54]) square([10, 8]);
-    }
-    holes(hole_radius);
-  }
-  pcb_holes();
-  //keys(switch_size);
+module case_top() difference() {
+  linear_extrude(height = 3.5) plate_middle();
+  translate([0, 0, 1.5]) linear_extrude(height = 3) translate([0, 68]) square([10, 20], center = true);
 }
 
-module case_top() difference() union() {
-  linear_extrude(height = 5) plate_middle();
-  linear_extrude(height = 1.5) pcb1();
-  translate([0, 0, 3.5]) linear_extrude(height = 1.5) translate([0, 74]) square([10, 6], center = true);
-}
-
-module case_bottom() union() {
-  linear_extrude(height = 4) plate_middle();
-  linear_extrude(height = 1.5) translate([0, 68]) square([10, 18], center = true);
-}
-
-//plate_top();
-//translate([0, 120]) plate_bottom();
-//translate([230, 120]) plate_middle();
+plate_top();
+translate([0, 120]) plate_bottom();
+translate([230, 120]) plate_middle();
 //translate([230, 120]) keys(switch_size, true);
 //translate([0, 120]) case_top();
-translate([0, 0]) pcb();
-//translate([0, 0]) case_bottom();
+translate([230, 0]) pcb();
 //translate([0, 0]) teensy();

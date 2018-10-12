@@ -1,4 +1,4 @@
-
+BOOTLOADER = halfkay
 
 # MCU name
 #MCU = at90usb1287
