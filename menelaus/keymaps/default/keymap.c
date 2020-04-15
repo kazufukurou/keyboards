@@ -21,13 +21,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         { KC_TILD, KC_PERC, KC_LCBR, KC_RCBR, KC_CIRC, KC_EQL,  KC_7,    KC_8,    KC_9,    KC_EXLM },
         { KC_DLR,  KC_AMPR, KC_LPRN, KC_RPRN, KC_AT,   KC_ASTR, KC_4,    KC_5,    KC_6,    KC_QUES },
         { KC_BSLS, KC_GRV,  KC_LBRC, KC_RBRC, KC_HASH, KC_PLUS, KC_1,    KC_2,    KC_3,    KC_SLSH },
-        { ___X___, ___X___, _______, _______, _______, _______, KC_0,    KC_PIPE, ___X___, ___X___ }
+        { ___X___, ___X___, ___X___, _______, ___X___, TO(3),   KC_0,    KC_PIPE, ___X___, ___X___ }
     },
     [2] = {
-        { KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_BTN1, KC_HOME, KC_END,  KC_UP,   KC_INS,  KC_DEL  },
+        { KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_BTN1, KC_HOME, KC_END,  KC_UP,   KC_INS,  KC_DEL  },
         { KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_BTN2, KC_PGUP, KC_LEFT, KC_DOWN, KC_RGHT, KC_VOLU },
-        { KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_BTN3, KC_PGDN, KC_MPRV, KC_MPLY, KC_MNXT, KC_VOLD },
-        { ___X___, ___X___, ___X___, RESET,   ___X___, TO(3),   _______, KC_MUTE, ___X___, ___X___ }
+        { KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_BTN3, KC_PGDN, KC_MPRV, KC_MPLY, KC_MNXT, KC_VOLD },
+        { ___X___, ___X___, ___X___, ___X___, ___X___, RESET,   _______, KC_MUTE, ___X___, ___X___ }
     },
     [3] = {
         { KC_ESC,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O    },
