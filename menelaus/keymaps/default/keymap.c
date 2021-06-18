@@ -2,7 +2,6 @@
 
 #define ___X___ KC_NO
 #define _______ KC_TRNS
-#define GUI_COM LGUI_T(KC_COMM)
 #define SFT_SPC SFT_T(KC_SPC)
 #define SFT_ENT SFT_T(KC_ENT)
 #define CTL_MIN CTL_T(KC_MINS)
@@ -13,7 +12,7 @@
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = {
-        { KC_SCLN, GUI_COM, KC_DOT,  KC_P,    KC_Y,          KC_F,    KC_G,    KC_C,    KC_R,    KC_L    },
+        { KC_SCLN, KC_COMM, KC_DOT,  KC_P,    KC_Y,          KC_F,    KC_G,    KC_C,    KC_R,    KC_L    },
         { KC_A,    KC_O,    KC_E,    KC_U,    KC_I,          KC_D,    KC_H,    KC_T,    KC_N,    KC_S    },
         { KC_QUOT, KC_Q,    KC_J,    KC_K,    KC_X,          KC_B,    KC_M,    KC_W,    KC_V,    KC_Z    },
         { ___X___, ___X___, ALT_ESC, MO1_TAB, SFT_SPC,       SFT_ENT, MO2_BS,  CTL_MIN, ___X___, ___X___ }
