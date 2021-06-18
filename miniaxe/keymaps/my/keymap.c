@@ -49,7 +49,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_TILD, KC_PERC, KC_LCBR, KC_RCBR, KC_CIRC,      KC_EQL,  KC_7,    KC_8,    KC_9,    KC_EXLM, \
   KC_DLR,  KC_AMPR, KC_LPRN, KC_RPRN, KC_AT,        KC_ASTR, KC_4,    KC_5,    KC_6,    KC_QUES, \
   KC_BSLS, KC_GRV,  KC_LBRC, KC_RBRC, KC_HASH,      KC_PLUS, KC_1,    KC_2,    KC_3,    KC_SLSH, \
-                    RESET,   _______, KC_SPC,       _______, KC_0,    KC_PIPE \
+                    RESET,   _______, KC_SPC,       KC_LGUI, KC_0,    KC_PIPE \
 ),
 
 [_RAISE] = LAYOUT( \
